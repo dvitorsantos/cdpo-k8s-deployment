@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: entity-manager-config
+  namespace: interscity
+data:
+  cataloguer.url: "http://iotcataloguer:8080"
+  hyperledger.network: "identities"
+  hyperledger.contract: "basic2"
+  hyperledger.wallet.path: "entity-manager-files"
+  server.port: "8080"

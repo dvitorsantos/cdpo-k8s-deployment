@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: secure-resource-adaptor
+  namespace: interscity
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: secure-resource-adaptor
+  template:
+    metadata:
+      labels:
+        app: secure-resource-adaptor
+    spec:
+      containers:
+      - name: secure-resource-adaptor
+        image: registry.lsdi.ufma.br/interscity/secure-resource-adaptor:0.0.1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: secure-resource-adaptor-config
+      imagePullSecrets:
+        - name: interscity-secret

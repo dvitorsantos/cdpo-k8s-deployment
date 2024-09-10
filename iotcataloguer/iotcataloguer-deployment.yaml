@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iotcataloguer
+  namespace: interscity
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iotcataloguer
+  template:
+    metadata:
+      labels:
+        app: iotcataloguer
+    spec:
+      containers:
+      - name: iotcataloguer
+        image: dvitorsantos/iotcataloguer:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: iotcataloguer-config

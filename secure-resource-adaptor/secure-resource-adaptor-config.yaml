@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: secure-resource-adaptor-config
+  namespace: interscity
+data:
+  springdoc.api-docs.path: "/api-docs"
+  springdoc.swagger-ui.path: "/api"
+  springdoc.swagger-ui.operationsSorter: "method"
+  #spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/mydb
+  #spring.datasource.username=root
+  #spring.datasource.password=my-secret-pw
+  #spring.datasource.driver-class-name =com.mysql.jdbc.Driver
+  #spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+  #spring.jpa.show-sql=false
+  #spring.jpa.hibernate.ddl-auto=create
+  #spring.jpa.show-sql: true
+  jwt.secret: "usersecret"
+  server.ssl.key-store: "springboot.p12"
+  server.ssl.key-store-password: "password"
+  server.ssl.key-store-type: "pkcs12"
+  server.ssl.key-alias: "springboot"
+  server.ssl.port: "8443"
+  server.port: "8080"
+

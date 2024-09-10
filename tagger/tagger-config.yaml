@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tagger-config
+  namespace: interscity
+data:
+  SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/tagger"
+  SPRING_DATASOURCE_USERNAME: "postgres"
+  SPRING_DATASOURCE_PASSWORD: "admin"
+  TAGGER_PROVIDER-URL_RESOURCE: "https://api.playground.interscity.org/catalog/resources/"
+  TAGGER_PROVIDER-URL_FOG-NODE: "http://iotcataloguer:8080/gateway/"
+  TAGGER_PROVIDER-URL_EDGE-NODE: "http://iotcataloguer:8080/resource/"

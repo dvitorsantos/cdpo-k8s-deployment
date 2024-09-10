@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: orquestrator-config
+  namespace: interscity
+data:
+  SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/cdpo"
+  SPRING_DATASOURCE_USERNAME: "postgres"
+  SPRING_DATASOURCE_PASSWORD: "admin"
+  TAGGER_URL: "http://tagger:8180/tagger/"
+  IOTCATALOGUER_URL: "http://iotcataloguer:8080/"
+  ENTITYMANAGER_URL: "http://entitymanager:8080/"
+  CDPO_SCHEDULE_RATE: "600000"
+  SECURITY_MODE: "enabled"
+  ORCHESTRATOR_IDENTIFIER: "orchestrator"

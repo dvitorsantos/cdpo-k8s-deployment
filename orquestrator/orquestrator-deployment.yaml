@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orquestrator
+  namespace: interscity
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: orquestrator
+  template:
+    metadata:
+      labels:
+        app: orquestrator
+    spec:
+      containers:
+      - name: orquestrator
+        image: dvitorsantos/orchestrator:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: orquestrator-config

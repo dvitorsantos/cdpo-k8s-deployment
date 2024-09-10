@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: iotcataloguer-config
+  namespace: interscity
+data:
+  HYPERLEDGER.NETWORK: "identities"
+  HYPERLEDGER.CONTRACT: "basic2"
+  SPRING.SQL.INIT.PLATFORM: "com.mysql.cj.jdbc.Driver"
+  SPRING.DATASOURCE.URL: "jdbc:mysql://mysql:3306/iotcataloguer"
+  SPRING.DATASOURCE.USERNAME: "root"
+  SPRING.DATASOURCE.PASSWORD: "admin"
+  MANAGERS.ALLOWED: "lsdi:ufma:br/entity-manager/1"
+  SERVER.PORT: "8080"

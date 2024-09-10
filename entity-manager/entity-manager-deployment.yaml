@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: entity-manager
+  namespace: interscity
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: entity-manager
+  template:
+    metadata:
+      labels:
+        app: entity-manager
+    spec:
+      containers:
+      - name: entity-manager
+        image: registry.lsdi.ufma.br/interscity/entity-manager:0.0.1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: entity-manager-config
+      imagePullSecrets:
+        - name: interscity-secret
