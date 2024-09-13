@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: resource-discoverer
-        image: registry.lsdi.ufma.br/interscity/resource-discovery:0.0.2
+        image: dvitorsantos/resource-discovery:latest
         imagePullPolicy: IfNotPresent
         command: 
         - /bin/sh

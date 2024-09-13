@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: data-collector
-        image: registry.lsdi.ufma.br/interscity/data-collector:fix-1
+        image: dvitorsantos/data-collector:latest
         imagePullPolicy: IfNotPresent
         command: 
         - /bin/sh
